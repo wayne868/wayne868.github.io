@@ -48,9 +48,10 @@
         <section class="hero-section">
             <div class="text">
                 <h2>Hi, I'm Wayne 👋🏽</h2>
-                
-                
-
+                <div class="typing-container">
+                    <span class="static-text">I'm a </span>
+                    <span class="typing-text"></span>
+                </div>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, temporibus quisquam ducimus amet, unde voluptates sapiente laudantium eos ipsam laboriosam molestiae ullam. Temporibus eum ducimus illum, odio dolorum voluptas sint?</p>
             
 
@@ -63,23 +64,47 @@
                         <i class="bi bi-mortarboard-fill"></i>
                         <span>Education</span>
                     </a>
-                    <a href="#roadmap">
-                        <i class="bi bi-map"></i>
-                        <span>Work Experience</span>
-                    </a>
-                    <a href="#contact">
-                        <i class="fa-solid fa-envelope"></i>
-                        <span>Contact?</span>
-                    </a>
-                    <a href="#resume">
-                        <i class="fa-solid fa-file"></i>
-                        <span>Download My Resume?</span>
-                    </a>
                 </div>
             </div>
             <div class="headshot">
                 <img src="images/wayne.jpg" alt="Wayne Jaggernauth">
             </div>
+            <script>
+            // Typing animation with moving cursor
+            const professions = ['Mechanical Engineer', 'Software Developer', 'HACCP Coordinator'];
+            const typingElement = document.querySelector('.typing-text');
+            
+            let professionIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            
+            function type() {
+                const currentProfession = professions[professionIndex];
+                const currentText = currentProfession.substring(0, charIndex);
+                
+                // Update text and cursor position
+                typingElement.innerHTML = currentText 
+                    ? currentText + '<span class="typing-cursor"></span>' 
+                    : '<span class="typing-cursor"></span>';
+                
+                if (!isDeleting && charIndex <= currentProfession.length) {
+                    charIndex++;
+                    setTimeout(type, 100);
+                } else if (isDeleting && charIndex >= 0) {
+                    charIndex--;
+                    setTimeout(type, 50);
+                } else {
+                    isDeleting = !isDeleting;
+                    if (!isDeleting) {
+                        professionIndex = (professionIndex + 1) % professions.length;
+                    }
+                    setTimeout(type, isDeleting ? 1000 : 500);
+                }
+            }
+            
+            // Start animation
+            type();
+            </script>
         </section>
 
         <!-- Section 2: Skills Section -->

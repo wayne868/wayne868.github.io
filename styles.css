@@ -99,7 +99,44 @@ nav .right a span {
     margin-bottom: 25px;
 }
 
+.typing-container {
+    display: inline-block;
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    line-height: 1;
+    white-space: nowrap;
+}
 
+.static-text {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: top;
+    line-height: 45px;
+}
+
+.typing-text {
+    position: relative;
+    display: inline-block;
+    color: var(--link-color);
+    vertical-align: top;
+    line-height: 45px;
+    min-width: 250px;
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 35px;
+    background-color: var(--link-color);
+    animation: blink 1s infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1 }
+    50% { opacity: 0 }
+}
 
 .hero-section .text .links {
     margin-top: 25px;
@@ -118,21 +155,6 @@ nav .right a span {
 .hero-section .text .links a:hover {
     color: var(--text-color);
     border: 2px solid;
-}
-
-@keyframes cycleText {
-    0%, 5% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    10%, 30% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    35%, 100% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
 }
 
 /* Section 2: Skills Section */
@@ -646,4 +668,3 @@ footer {
 
     
 }
-
