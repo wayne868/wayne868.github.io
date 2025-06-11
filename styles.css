@@ -1,6 +1,6 @@
 :root {
     --text-color: #f5efef;
-    --link-color: #72ee53;
+    --link-color: #7fee53;
     --background-color: #1f242d;
     --placeholder-color: #6c757d;
 }
@@ -388,14 +388,14 @@ nav .right a span {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 0 120px 0;
-    min-height: 2300px;
+    min-height: 2200px;
 }
 .roadmap-container h2 {
     font-size: 35px;
     font-weight: 600;
     align-items: center;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 120px;
 }
 .road-svg-bg {
     position: absolute;
