@@ -1,6 +1,6 @@
 :root {
     --text-color: #f5efef;
-    --link-color: #7cf03d;
+    --link-color: #72ee53;
     --background-color: #1f242d;
     --placeholder-color: #6c757d;
 }
@@ -90,12 +90,15 @@ nav .right a span {
     height: 400px;
     object-fit: cover;
     border-radius: 50%;
+    border: 2px solid var(--link-color);
 }
 
 .hero-section .text h2 {
     font-size: 50px;
     font-weight: 600;
+    margin-bottom: 25px;
 }
+
 
 
 .hero-section .text .links {
@@ -160,7 +163,7 @@ nav .right a span {
     align-items: center;
     width: 200px;
     padding:10px 20px;
-    border: 1.5px solid #d3d3d3;
+    border: 1.5px solid var(--link-color);
     border-radius: 5px;
     margin: 10px;
     transition: 0.1s;
@@ -177,6 +180,121 @@ nav .right a span {
 .skills-section .cells .cell span {
     font-size: 18px;
 }
+
+/* Section 3: Roadmap Section */
+.roadmap-section {
+    padding: 0 50px;
+    margin-bottom: 100px;
+    position: relative;
+}
+
+.roadmap-section h2 {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+/* Section 3.5: Education Section */
+
+/* Main education container */
+.education {
+    padding: 0 50px;
+    margin-bottom: 100px;
+}
+.education h2 {
+    text-align: center;
+    font-size: 35px;
+}
+
+/* Education Cards Grid Layout */
+.education-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+/* Individual Education Card */
+.education-cards .card {
+    /* Card structure */
+    background-color: var(--background-color);
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid var(--link-color);
+    min-height: 380px;
+    
+    /* Flex layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    /* Card effects */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Card hover effects */
+.education-cards .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(20, 228, 197, 0.15);
+    border-color: var(--link-color);
+    border-width: 2px;
+}
+
+/* Card content styling */
+.education-cards .card h3 {
+    color: var(--link-color);
+    font-size: 1.2rem;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 0;
+    padding: 0 10px;
+}
+.education-cards .card h3:hover {
+    color: var(--text-color);
+    
+}
+.education-cards .card .institution {
+    font-weight: 500;
+    margin-top: 20px;
+    padding: 15px 0;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    border-top: 1px solid var(--link-color);
+    border-bottom: 1px solid var(--link-color);
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.education-cards .card .year {
+    margin: 20px 0;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 500;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.education-cards .card .note {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
 
 @media (max-width: 850px) {
     /* Section 1: Hero Section */
@@ -241,6 +359,221 @@ nav .right a span {
     filter: brightness(0.9);
 }
 
+
+
+.roadmap-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 0 120px 0;
+    min-height: 2300px;
+}
+.roadmap-container h2 {
+    font-size: 35px;
+    font-weight: 600;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.road-svg-bg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px;
+    height: 2200px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.road-svg {
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 170px;
+    height: 2200px;
+}
+
+
+.timeline {
+    position: relative;
+    position: relative;
+    position: relative;
+    z-index: 2;
+}
+
+.marker {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56px;
+    height: 56px;
+    background: var(--background-color);
+    border-radius: 50%;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    font-weight: bold;
+    z-index: 3;
+}
+.marker span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--link-color);
+    color: #fff;
+    font-size: 1.35rem;
+    font-weight: bold;
+}
+.marker-1 { top: 70px; }
+.marker-2 { top: 250px; }
+.marker-3 { top: 430px; }
+.marker-4 { top: 620px; }
+.marker-5 { top: 900px; }
+.marker-6 { top: 1200px; }
+.marker-7 { top: 1920px; }
+.marker-3 span,
+.marker-4 span,
+.marker-5 span,
+.marker-6 span,
+.marker-7 span { background: var(--link-color); }
+
+.carda {
+    position: absolute;
+    width: 320px;
+    min-height: 120px;
+    border-radius: 24px;
+    background: var(--background-color);
+    color: #fff;
+    padding: 22px 24px 16px 24px;
+    box-shadow: 0 4px 24px rgba(44,62,80,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1rem;
+    border: 2px solid var(--link-color);    
+}
+.carda.left {
+    left: calc(50% - 450px); /* 250px gap from road edge */
+}
+.carda.right {
+    right: calc(50% - 450px);
+}
+.card-1 { top: 30px; }
+.card-2 { top: 260px; }
+.card-3 { top: 510px; }
+.card-4 { top: 760px; }
+.card-5 { top: 1010px; }
+.card-6 { top: 1260px; }
+.card-7 { top: 1510px; }
+.card-8 { top: 1760px; }
+.card-9 { top: 2010px; }
+
+/* Markers perfectly aligned to cards */
+.marker-1 { top: 30px; }
+.marker-2 { top: 260px; }
+.marker-3 { top: 510px; }
+.marker-4 { top: 760px; }
+.marker-5 { top: 1010px; }
+.marker-6 { top: 1260px; }
+.marker-7 { top: 1510px; }
+.marker-8 { top: 1760px; }
+.marker-9 { top: 2010px; }
+
+.card-marker-connector-1 { top: 50px; left: 360px; width: 75px; }
+.card-marker-connector-2 { top: 280px; right: 360px; width: 75px; }
+.card-marker-connector-3 { top: 530px; left: 360px; width: 75px; }
+.card-marker-connector-4 { top: 780px; right: 360px; width: 75px; }
+.card-marker-connector-5 { top: 1030px; left: 360px; width: 75px; }
+.card-marker-connector-6 { top: 1280px; right: 360px; width: 75px; }
+.card-marker-connector-7 { top: 1530px; left: 360px; width: 75px; }
+.card-marker-connector-8 { top: 1780px; right: 360px; width: 75px; }
+.card-marker-connector-9 { top: 2030px; left: 360px; width: 75px; }
+.card-marker-connector-1,
+.card-marker-connector-2,
+.card-marker-connector-3,
+.card-marker-connector-4,
+.card-marker-connector-5,
+.card-marker-connector-6,
+.card-marker-connector-7,
+.card-marker-connector-8,
+.card-marker-connector-9 {
+    position: absolute;
+    height: 4px;
+    background: var(--link-color);
+    z-index: 1000;
+}
+
+
+
+.carda h3 {
+    margin: 0 0 6px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+}
+.carda p {
+    margin: 0 0 6px 0;
+    font-size: 0.96rem;
+    opacity: 0.97;
+    text-align: center;
+}
+
+.carda {
+    position: absolute;
+    overflow: visible;
+}
+
+.carda .duties {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-width: 420px;
+    min-height: 100%;
+    background: var(--background-color);
+    color: #fff;
+    border-radius: 16px;
+    font-size: 1.02rem;
+    box-shadow: 0 6px 32px rgba(44,62,80,0.16);
+    z-index: 1002;
+    padding: 28px 28px 28px 36px;
+    margin: 0;
+    text-align: left;
+    transition: box-shadow 0.2s, background 0.2s;
+    border: 2px solid var(--link-color);
+}
+
+.carda:hover .duties {
+    display: block;
+    z-index: 1002;
+}
+
+
+
+
+@media (max-width: 900px) {
+    .roadmap-container { max-width: 100vw; }
+    .carda { width: 92vw; left: 4vw !important; right: auto !important; }
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+}
+
+
 @media (max-width: 740px) {
     /* Section 1: Hero Section */
     .hero-section {
@@ -250,6 +583,17 @@ nav .right a span {
     .hero-section .headshot img {
         width: 300px;
         height: 300px;
+    }
+
+    .education-cards {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 30px;
+    }
+
+    .education-cards .card {
+        padding: 25px;
+        min-height: 340px;
     }
     /* Section 4: Contact Section */
     .contact-section .group {
@@ -299,4 +643,7 @@ nav .right a span {
     .contact-section {
         padding: 0 20px;
     }
+
+    
 }
+
