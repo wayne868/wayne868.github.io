@@ -630,24 +630,6 @@ nav .right a span {
     z-index: 1002;
 }
 
-
-
-
-@media (max-width: 900px) {
-    .roadmap-container { max-width: 100vw; }
-    .carda { width: 92vw; left: 4vw !important; right: auto !important; }
-}
-
-
-/* Footer */
-footer {
-    background-color: var(--dark-color);
-    color: white;
-    text-align: center;
-    padding: 30px 0;
-}
-
-
 @media (max-width: 740px) {
     /* Section 1: Hero Section */
     .hero-section {
@@ -719,6 +701,10 @@ footer {
     }
 
     /* ROADMAP */
+    .roadmap-container {
+        padding-bottom: 40px;
+    }
+    
     .road-svg, .road-svg-bg, 
     .marker, .marker-1, .marker-2, .marker-3, .marker-4, .marker-5, .marker-6, .marker-7,
     .card-marker-connector, .card-marker-connector-1, .card-marker-connector-2, 
@@ -734,4 +720,172 @@ footer {
         right: 0 !important;
         margin-bottom: 40px;
     }
+    
+    .roadmap-container {
+        padding: 20px;
+        min-height: auto;
+    }
+    
+    .timeline {
+        gap: 30px;
+    }
+    
+    .carda {
+        width: 100% !important;
+        margin: 0 0 30px 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        position: relative !important;
+        padding: 20px;
+    }
+    
+    .carda h3 {
+        font-size: 22px;
+    }
+    
+    .carda p {
+        font-size: 16px;
+        margin: 8px 0;
+    }
+    
+    .carda ul.duties li {
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+    
+    .roadmap-container {
+        padding: 20px 20px 60px 20px;
+        min-height: auto;
+    }
+    
+    .education {
+        margin-top: 40px;
+    }
+    
+    .carda {
+        width: 100% !important;
+        margin: 0 0 30px 0 !important;
+        transform: none !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    }
+    
+    .carda:hover {
+        transform: none !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    }
+}
+
+/* Complete solution for making roadmap cards match education cards on mobile */
+@media (max-width: 690px) {
+    /* Hide SVG elements and markers */
+    .road-svg, .road-svg-bg, 
+    .marker, .marker-1, .marker-2, .marker-3, .marker-4, .marker-5, .marker-6, .marker-7,
+    .card-marker-connector, .card-marker-connector-1, .card-marker-connector-2, 
+    .card-marker-connector-3, .card-marker-connector-4, .card-marker-connector-5,
+    .card-marker-connector-6, .card-marker-connector-7 {
+        display: none !important;
+    }
+    
+    /* Reset all absolute positioning on mobile */
+    .roadmap-container * {
+        position: static !important;
+    }
+    
+    /* Roadmap container styles */
+    .roadmap-container {
+        padding: 20px !important;
+        min-height: auto !important;
+        background: transparent !important;
+    }
+    
+    /* Timeline grid styling */
+    .roadmap-container .timeline {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        margin-top: 40px !important;
+        position: static !important;
+    }
+    
+    /* Card styling to match education cards exactly */
+    .carda {
+        display: flex !important;
+        flex-direction: column !important;
+        background-color: var(--background-color) !important;
+        padding: 25px !important;
+        border-radius: 12px !important;
+        border: 1px solid var(--link-color) !important;
+        min-height: 340px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        position: static !important;
+        box-shadow: none !important;
+        left: initial !important;
+        right: initial !important;
+        top: initial !important;
+        margin: 0 0 20px 0 !important;
+    }
+    
+    /* Proper typography spacing */
+    .carda h3 {
+        margin-bottom: 15px !important;
+    }
+    
+    .carda p {
+        margin-bottom: 12px !important;
+    }
+    
+    /* Hide duties completely */
+    .carda .duties {
+        display: none !important;
+    }
+    
+    /* Education spacing */
+    .education {
+        margin-top: 60px !important;
+    }
+}
+
+@media (max-width: 690px) {
+    .roadmap-container {
+        padding: 20px;
+        min-height: auto;
+    }
+    
+    .timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .carda {
+        position: relative !important;
+        width: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 0 20px 0 !important;
+        padding: 25px;
+        min-height: 340px !important;
+        height: auto !important;
+        padding-bottom: 25px !important;
+    }
+    
+    /* Match education card content spacing */
+    .carda h3 {
+        margin-bottom: 15px !important;
+    }
+    
+    .carda p {
+        margin-bottom: 12px !important;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
 }
