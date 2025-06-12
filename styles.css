@@ -50,7 +50,6 @@ nav .left a {
 nav .right a {
     color: var(--text-color);
     margin: 0 10px;
-    
 }
 
 nav .right a:last-child {
@@ -348,6 +347,33 @@ nav .right a span {
     /* Section 1: Hero Section */
     .hero-section .text h2{
         font-size: 35px;
+    }
+    .roadmap-container {
+        padding: 0 20px 60px 20px;
+        min-height: auto;
+    }
+    
+    .roadmap-container .timeline {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .roadmap-container .card {
+        position: relative;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    
+    .roadmap-container h2 {
+        margin-bottom: 60px;
+    }
+    
+    .road-svg {
+        display: none;
+    }
+    
+    .road-svg-bg {
+        display: none;
     }
 }
 
@@ -692,5 +718,20 @@ footer {
         padding: 0 20px;
     }
 
+    /* ROADMAP */
+    .road-svg, .road-svg-bg, 
+    .marker, .marker-1, .marker-2, .marker-3, .marker-4, .marker-5, .marker-6, .marker-7,
+    .card-marker-connector, .card-marker-connector-1, .card-marker-connector-2, 
+    .card-marker-connector-3, .card-marker-connector-4, .card-marker-connector-5,
+    .card-marker-connector-6, .card-marker-connector-7 {
+        display: none;
+    }
     
+    .carda {
+        position: relative !important;
+        width: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin-bottom: 40px;
+    }
 }
