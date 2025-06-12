@@ -50,7 +50,7 @@ nav .left a {
 nav .right a {
     color: var(--text-color);
     margin: 0 10px;
-    align-item :top;
+    align-items :top;
 }
 
 nav .right a:last-child {
